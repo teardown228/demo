@@ -1,0 +1,262 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #f6f6f6;
+    color: #1a1a1a;
+}
+
+/* ===== HEADER ===== */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #ffffff;
+    padding: 16px 16px 12px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.langs {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+}
+
+.langs button {
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: none;
+    background: #f0f0f0;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.langs button:hover {
+    background: #e0e0e0;
+}
+
+/* ===== MAIN ===== */
+main {
+    padding: 20px 16px 40px;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+/* ===== CATEGORY ===== */
+.category {
+    margin-bottom: 36px;
+}
+
+.category h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+/* ===== ITEM ===== */
+.item {
+    display: flex;
+    gap: 14px;
+    background: #ffffff;
+    padding: 14px;
+    border-radius: 18px;
+    margin-bottom: 14px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.item img {
+    width: 88px;
+    height: 88px;
+    object-fit: cover;
+    border-radius: 14px;
+    flex-shrink: 0;
+    background: #ddd;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.info p {
+    margin: 6px 0 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.price {
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #000;
+}
+
+/* ===== DARK THEME ===== */
+body.dark {
+    background: #0f0f0f;
+    color: #eaeaea;
+}
+
+body.dark header {
+    background: #121212;
+    border-bottom-color: #222;
+}
+
+body.dark .langs button {
+    background: #222;
+    color: #eaeaea;
+}
+
+body.dark main {
+    background: transparent;
+}
+
+body.dark .category h2 {
+    border-bottom-color: #333;
+}
+
+body.dark .item {
+    background: #1a1a1a;
+    box-shadow: none;
+}
+
+body.dark .info p {
+    color: #aaa;
+}
+
+body.dark .price {
+    color: #fff;
+}
+
+/* ===== ACCORDION ===== */
+.category-title {
+    cursor: pointer;
+    position: relative;
+    padding-right: 20px;
+}
+
+.category-title::after {
+    content: "⌄";
+    position: absolute;
+    right: 0;
+    top: 2px;
+    font-size: 18px;
+    transition: transform 0.25s ease;
+}
+
+.category-title.open::after {
+    transform: rotate(180deg);
+}
+
+/* ===== SMOOTH ACCORDION ===== */
+.items {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.items.open {
+    max-height: 2000px;
+    opacity: 1;
+}
+
+/* ===== CART BUTTON ===== */
+#cartBtn {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: none;
+    background: #ff6b6b;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    z-index: 20;
+}
+
+#cartBtn:hover {
+    background: #ff5252;
+}
+
+/* ===== CART OVERLAY ===== */
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+}
+
+.cart-overlay.active {
+    display: flex;
+}
+
+.cart-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90%;
+    overflow-y: auto;
+    position: relative;
+}
+
+.cart-content h2 {
+    margin-top: 0;
+}
+
+#closeCart {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* ===== ITEM CONTROLS ===== */
+.item-controls {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.item-controls button {
+    padding: 2px 8px;
+    border-radius: 6px;
+    border: none;
+    background: #ddd;
+    cursor: pointer;
+}
+
+.item-controls span {
+    font-weight: 600;
+}

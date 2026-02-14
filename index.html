@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Restaurant Bogmi</h1>
+
+    <div class="langs">
+        <button onclick="setLanguage('ru')">RU</button>
+        <button onclick="setLanguage('en')">EN</button>
+        <button onclick="setLanguage('ua')">UA</button>
+        <button id="themeToggle">🌙</button>
+    </div>
+
+    <!-- Кнопка корзины -->
+    <button id="cartBtn">🛒 Корзина (<span id="cartCount">0</span>)</button>
+</header>
+
+<!-- Overlay корзины -->
+<div id="cartOverlay" class="cart-overlay">
+    <div class="cart-content">
+    <button id="closeCart">✖</button>
+    <h2>Ваша корзина</h2>
+    <div id="cartItems"></div>
+    <div id="cartTotal" style="margin-top: 16px; font-weight:600;">Сумма: 0₴</div>
+</div>
+    </div>
+</div>
+
+<main id="menu"></main>
+
+<script src="script.js"></script>
+</body>
+</html>
